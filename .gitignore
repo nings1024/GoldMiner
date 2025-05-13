@@ -1,0 +1,16 @@
+# Godot-specific
+.import/
+.export/
+.godot/
+build/
+*.import
+*.tmp
+*.converted.*
+*.translation
+*.godot
+*.godot-export-*
+*.uid         
+
+# System files
+.DS_Store
+Thumbs.db
