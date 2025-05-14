@@ -9,7 +9,6 @@ build/
 *.translation
 *.godot
 *.godot-export-*
-*.uid         
 
 # System files
 .DS_Store
