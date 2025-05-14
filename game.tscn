@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://5afh1scycdu7"]
+[gd_scene load_steps=12 format=4 uid="uid://5afh1scycdu7"]
 
-[ext_resource type="Texture2D" uid="uid://fopedn5ps7sl" path="res://images/bottomtile.png" id="1_80nbo"]
-[ext_resource type="Texture2D" uid="uid://bfd8mh0pw4h33" path="res://images/bgtile2.png" id="2_7jktm"]
-[ext_resource type="Texture2D" uid="uid://bv610rdkvq4k7" path="res://images/bgtile3.png" id="3_ryrav"]
-[ext_resource type="Texture2D" uid="uid://fgufv354v5h7" path="res://images/bgtile4.png" id="4_eow3j"]
-[ext_resource type="Texture2D" uid="uid://dnkwt46e421p" path="res://images/bgtile1.png" id="5_j5wjh"]
+[ext_resource type="Texture2D" uid="uid://bd1j87dej0pgv" path="res://images/bottomtile.png" id="1_80nbo"]
+[ext_resource type="Texture2D" uid="uid://5jr24v40dde4" path="res://images/bgtile2.png" id="2_7jktm"]
+[ext_resource type="Texture2D" uid="uid://krmcquo6603c" path="res://images/bgtile3.png" id="3_ryrav"]
+[ext_resource type="Texture2D" uid="uid://bp2fjvy35qp0l" path="res://images/bgtile4.png" id="4_eow3j"]
+[ext_resource type="Texture2D" uid="uid://sapt6s0rmyg8" path="res://images/bgtile1.png" id="5_j5wjh"]
+[ext_resource type="PackedScene" uid="uid://cwieu8mgssmel" path="res://player.tscn" id="6_ryrav"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vef74"]
 texture = ExtResource("2_7jktm")
@@ -32,43 +33,43 @@ sources/12 = SubResource("TileSetAtlasSource_mfdv2")
 [node name="BackGround" type="Node2D" parent="."]
 
 [node name="Bottomtile4" type="Sprite2D" parent="BackGround"]
-position = Vector2(1074, 1301)
+position = Vector2(1074, 1000)
 rotation = -1.5708
 texture = ExtResource("1_80nbo")
 centered = false
 
 [node name="Bottomtile5" type="Sprite2D" parent="BackGround"]
-position = Vector2(1432, 1301)
+position = Vector2(1432, 1000)
 rotation = -1.5708
 texture = ExtResource("1_80nbo")
 centered = false
 
 [node name="Bottomtile6" type="Sprite2D" parent="BackGround"]
-position = Vector2(1790, 1301)
+position = Vector2(1790, 1000)
 rotation = -1.5708
 texture = ExtResource("1_80nbo")
 centered = false
 
 [node name="Bottomtile3" type="Sprite2D" parent="BackGround"]
-position = Vector2(358, 1296)
+position = Vector2(358, 1000)
 rotation = -1.5708
 texture = ExtResource("1_80nbo")
 centered = false
 
 [node name="Bottomtile" type="Sprite2D" parent="BackGround"]
-position = Vector2(0, 1296)
+position = Vector2(0, 1000)
 rotation = -1.5708
 texture = ExtResource("1_80nbo")
 centered = false
 
 [node name="Bottomtile2" type="Sprite2D" parent="BackGround"]
-position = Vector2(716, 1296)
+position = Vector2(716, 1000)
 rotation = -1.5708
 texture = ExtResource("1_80nbo")
 centered = false
 
 [node name="Bottomtile7" type="Sprite2D" parent="BackGround"]
-position = Vector2(2142, 1296)
+position = Vector2(2142, 1000)
 rotation = -1.5708
 texture = ExtResource("1_80nbo")
 centered = false
@@ -76,3 +77,9 @@ centered = false
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAAAQADAAAAAAAAAABAAQADAAAAAAAAAACAAQADAAAAAAAAAADAAQADAAAAAAAAAAEAAQADAAAAAAAAAAFAAQADAAAAAAAAAAGAAQADAAAAAAAAAAHAAQADAAAAAAAAAAIAAQADAAAAAAAAAA=")
 tile_set = SubResource("TileSet_80nbo")
+
+[node name="Player" parent="." instance=ExtResource("6_ryrav")]
+position = Vector2(483, 189)
+
+[node name="Player2" parent="." instance=ExtResource("6_ryrav")]
+position = Vector2(816, 188)

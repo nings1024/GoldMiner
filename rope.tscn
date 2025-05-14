@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=3 uid="uid://x4tnp1hn3ll4"]
+
+[ext_resource type="Script" uid="uid://df54nbwtmj84q" path="res://rope.gd" id="1_jry5w"]
+[ext_resource type="Texture2D" uid="uid://bxhdgomjsr08t" path="res://images/ropetile.png" id="1_nmccy"]
+[ext_resource type="Texture2D" uid="uid://dbj3goa244gwt" path="res://images/hook-sheet1.png" id="2_jry5w"]
+[ext_resource type="Script" uid="uid://cyjj3nyqr8e3y" path="res://addons/state_machine_nodes/state_machine.gd" id="4_qe201"]
+[ext_resource type="Script" uid="uid://c1jpm6s00u5kp" path="res://pulling.gd" id="5_rov0i"]
+[ext_resource type="Script" uid="uid://dvn23on2u8llv" path="res://default.gd" id="6_id5n5"]
+[ext_resource type="Script" uid="uid://dfah2u8ouktgw" path="res://swing.gd" id="7_x76su"]
+[ext_resource type="Script" uid="uid://cprnrgb3ku3ly" path="res://forward.gd" id="8_anbju"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jry5w"]
+size = Vector2(46, 28)
+
+[node name="rope" type="Node2D"]
+script = ExtResource("1_jry5w")
+
+[node name="rope" type="Node2D" parent="."]
+rotation = 1.39626
+
+[node name="Line2D" type="Line2D" parent="rope"]
+points = PackedVector2Array(0, 0, 0, 50)
+texture = ExtResource("1_nmccy")
+texture_mode = 1
+
+[node name="Hook-sheet1" type="Sprite2D" parent="rope"]
+position = Vector2(0, 55)
+texture = ExtResource("2_jry5w")
+region_enabled = true
+region_rect = Rect2(142, 70, 46, 28)
+
+[node name="Area2D" type="Area2D" parent="rope/Hook-sheet1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rope/Hook-sheet1/Area2D"]
+position = Vector2(0.471074, -0.0838964)
+shape = SubResource("RectangleShape2D_jry5w")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("4_qe201")
+initial_state = NodePath("default")
+metadata/_custom_type_script = "uid://cyjj3nyqr8e3y"
+
+[node name="pulling" type="Node" parent="StateMachine"]
+script = ExtResource("5_rov0i")
+metadata/_custom_type_script = "uid://dsnjlxvj4s1uu"
+
+[node name="default" type="Node" parent="StateMachine"]
+script = ExtResource("6_id5n5")
+metadata/_custom_type_script = "uid://dsnjlxvj4s1uu"
+
+[node name="swing" type="Node" parent="StateMachine"]
+script = ExtResource("7_x76su")
+metadata/_custom_type_script = "uid://dsnjlxvj4s1uu"
+
+[node name="forward" type="Node" parent="StateMachine"]
+script = ExtResource("8_anbju")
+metadata/_custom_type_script = "uid://dsnjlxvj4s1uu"
