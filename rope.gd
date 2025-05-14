@@ -4,9 +4,12 @@ var twenn:Tween
 signal init_end
 
 @onready var rope: Node2D = $rope
+@onready var line_2d: Line2D = $rope/Line2D
+@onready var hook: Node2D = $rope/Hook
 
 
-var swing_amplitude = 40         # 最大摆动角度（度）
+
+var swing_amplitude = 70         # 最大摆动角度（度）
 var swing_speed = 2.0            # 摆动速度（频率）
 var swing_time = 0.0             # 时间累加器
 var is_swinging = true           # 是否正在摆动

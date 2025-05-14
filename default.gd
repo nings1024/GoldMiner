@@ -13,8 +13,7 @@ func _enter_state(old_state, state_data: Dictionary):
 	
 
 func _init_refs():
-	rope=owner.rope
-	rope.position=Vector2(100,100)
+	pass
 	
 func _process(delta: float) -> void:
 	owner.init_end.emit()
@@ -22,4 +21,4 @@ func _process(delta: float) -> void:
 
 # Called by a StateMachine when the state is exited.
 func _exit_state(new_state, state_data: Dictionary):
-	print('推出')
+	pass

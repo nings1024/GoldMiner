@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=4 uid="uid://5afh1scycdu7"]
 
-[ext_resource type="Texture2D" uid="uid://bd1j87dej0pgv" path="res://images/bottomtile.png" id="1_80nbo"]
-[ext_resource type="Texture2D" uid="uid://5jr24v40dde4" path="res://images/bgtile2.png" id="2_7jktm"]
-[ext_resource type="Texture2D" uid="uid://krmcquo6603c" path="res://images/bgtile3.png" id="3_ryrav"]
-[ext_resource type="Texture2D" uid="uid://bp2fjvy35qp0l" path="res://images/bgtile4.png" id="4_eow3j"]
-[ext_resource type="Texture2D" uid="uid://sapt6s0rmyg8" path="res://images/bgtile1.png" id="5_j5wjh"]
+[ext_resource type="Texture2D" uid="uid://fopedn5ps7sl" path="res://images/bottomtile.png" id="1_80nbo"]
+[ext_resource type="Texture2D" uid="uid://bfd8mh0pw4h33" path="res://images/bgtile2.png" id="2_7jktm"]
+[ext_resource type="Texture2D" uid="uid://bv610rdkvq4k7" path="res://images/bgtile3.png" id="3_ryrav"]
+[ext_resource type="Texture2D" uid="uid://fgufv354v5h7" path="res://images/bgtile4.png" id="4_eow3j"]
+[ext_resource type="Texture2D" uid="uid://dnkwt46e421p" path="res://images/bgtile1.png" id="5_j5wjh"]
 [ext_resource type="PackedScene" uid="uid://cwieu8mgssmel" path="res://player.tscn" id="6_ryrav"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vef74"]
@@ -79,7 +79,7 @@ tile_map_data = PackedByteArray("AAAAAAQADAAAAAAAAAABAAQADAAAAAAAAAACAAQADAAAAAA
 tile_set = SubResource("TileSet_80nbo")
 
 [node name="Player" parent="." instance=ExtResource("6_ryrav")]
-position = Vector2(483, 189)
+position = Vector2(406, 189)
 
 [node name="Player2" parent="." instance=ExtResource("6_ryrav")]
-position = Vector2(816, 188)
+position = Vector2(746, 188)

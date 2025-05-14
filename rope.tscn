@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://x4tnp1hn3ll4"]
 
 [ext_resource type="Script" uid="uid://df54nbwtmj84q" path="res://rope.gd" id="1_jry5w"]
-[ext_resource type="Texture2D" uid="uid://bxhdgomjsr08t" path="res://images/ropetile.png" id="1_nmccy"]
-[ext_resource type="Texture2D" uid="uid://dbj3goa244gwt" path="res://images/hook-sheet1.png" id="2_jry5w"]
+[ext_resource type="Texture2D" uid="uid://bcyxckt6kox45" path="res://images/ropetile.png" id="1_nmccy"]
+[ext_resource type="Texture2D" uid="uid://oxexx6u2ansj" path="res://images/hook-sheet1.png" id="2_jry5w"]
 [ext_resource type="Script" uid="uid://cyjj3nyqr8e3y" path="res://addons/state_machine_nodes/state_machine.gd" id="4_qe201"]
 [ext_resource type="Script" uid="uid://c1jpm6s00u5kp" path="res://pulling.gd" id="5_rov0i"]
 [ext_resource type="Script" uid="uid://dvn23on2u8llv" path="res://default.gd" id="6_id5n5"]
@@ -16,24 +16,29 @@ size = Vector2(46, 28)
 script = ExtResource("1_jry5w")
 
 [node name="rope" type="Node2D" parent="."]
-rotation = 1.39626
 
 [node name="Line2D" type="Line2D" parent="rope"]
+scale = Vector2(1, 1)
 points = PackedVector2Array(0, 0, 0, 50)
 texture = ExtResource("1_nmccy")
 texture_mode = 1
 
-[node name="Hook-sheet1" type="Sprite2D" parent="rope"]
+[node name="Hook" type="Node2D" parent="rope"]
 position = Vector2(0, 55)
+
+[node name="Area2D" type="Area2D" parent="rope/Hook"]
+position = Vector2(-1.90735e-06, 55)
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rope/Hook/Area2D"]
+position = Vector2(-5.96046e-07, -56)
+shape = SubResource("RectangleShape2D_jry5w")
+
+[node name="Hook" type="Sprite2D" parent="rope/Hook"]
+scale = Vector2(1, 1)
 texture = ExtResource("2_jry5w")
 region_enabled = true
 region_rect = Rect2(142, 70, 46, 28)
-
-[node name="Area2D" type="Area2D" parent="rope/Hook-sheet1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="rope/Hook-sheet1/Area2D"]
-position = Vector2(0.471074, -0.0838964)
-shape = SubResource("RectangleShape2D_jry5w")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("4_qe201")
