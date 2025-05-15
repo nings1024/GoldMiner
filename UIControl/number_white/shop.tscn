@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://3ytw5a2im1ho"]
+[gd_scene load_steps=16 format=3 uid="uid://3ytw5a2im1ho"]
 
 [ext_resource type="Texture2D" uid="uid://dii6h2ll67jt1" path="res://images/shoptoptile.png" id="1_aalhw"]
 [ext_resource type="Texture2D" uid="uid://cuvs0ppk7thu0" path="res://images/shopbg.png" id="2_hivy0"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dps70t1gy6mnr" path="res://images/shopbottles-sheet0.png" id="4_pbv0a"]
 [ext_resource type="Texture2D" uid="uid://bsvtn7wm035vd" path="res://images/shopraf-sheet0.png" id="5_8mu67"]
 [ext_resource type="Texture2D" uid="uid://c6olyx0ap48qp" path="res://images/shoppatch.png" id="5_pbv0a"]
+[ext_resource type="Texture2D" uid="uid://bay5vxd26vtau" path="res://images/shopnext-sheet0.png" id="8_6hqm8"]
+[ext_resource type="Texture2D" uid="uid://bhcuhn122tgls" path="res://images/shopitembg-sheet0.png" id="9_xxwpu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6hqm8"]
 atlas = ExtResource("3_8mu67")
@@ -27,6 +29,10 @@ region = Rect2(2, 25, 43, 81)
 [sub_resource type="AtlasTexture" id="AtlasTexture_yu3br"]
 atlas = ExtResource("4_pbv0a")
 region = Rect2(128, 2, 46, 106)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swrlp"]
+atlas = ExtResource("9_xxwpu")
+region = Rect2(266, 2, 244, 253)
 
 [node name="Shop" type="Control"]
 layout_mode = 3
@@ -161,6 +167,7 @@ offset_bottom = 350.0
 texture = ExtResource("5_8mu67")
 
 [node name="raf2" type="TextureRect" parent="ShopSundriesbg"]
+layout_mode = 0
 offset_left = 783.0
 offset_top = 404.0
 offset_right = 1306.0
@@ -168,6 +175,7 @@ offset_bottom = 444.0
 texture = ExtResource("5_8mu67")
 
 [node name="raf3" type="TextureRect" parent="ShopSundriesbg"]
+layout_mode = 0
 offset_left = 781.0
 offset_top = 189.0
 offset_right = 1304.0
@@ -183,6 +191,7 @@ offset_bottom = 317.0
 texture = SubResource("AtlasTexture_8mu67")
 
 [node name="yao2" type="TextureRect" parent="ShopSundriesbg"]
+layout_mode = 0
 offset_left = 980.0
 offset_top = 107.0
 offset_right = 1023.0
@@ -190,6 +199,7 @@ offset_bottom = 188.0
 texture = SubResource("AtlasTexture_8mu67")
 
 [node name="yao3" type="TextureRect" parent="ShopSundriesbg"]
+layout_mode = 0
 offset_left = 880.0
 offset_top = 321.0
 offset_right = 923.0
@@ -197,6 +207,7 @@ offset_bottom = 402.0
 texture = SubResource("AtlasTexture_8mu67")
 
 [node name="yao4" type="TextureRect" parent="ShopSundriesbg"]
+layout_mode = 0
 offset_left = 188.0
 offset_top = 451.0
 offset_right = 231.0
@@ -204,6 +215,7 @@ offset_bottom = 532.0
 texture = SubResource("AtlasTexture_8mu67")
 
 [node name="yao5" type="TextureRect" parent="ShopSundriesbg"]
+layout_mode = 0
 offset_left = 640.0
 offset_top = 449.0
 offset_right = 683.0
@@ -211,6 +223,7 @@ offset_bottom = 530.0
 texture = SubResource("AtlasTexture_8mu67")
 
 [node name="yao6" type="TextureRect" parent="ShopSundriesbg"]
+layout_mode = 0
 offset_left = 247.0
 offset_top = 240.0
 offset_right = 290.0
@@ -218,6 +231,7 @@ offset_bottom = 321.0
 texture = SubResource("AtlasTexture_8mu67")
 
 [node name="yao7" type="TextureRect" parent="ShopSundriesbg"]
+layout_mode = 0
 offset_left = 362.0
 offset_top = 215.0
 offset_right = 408.0
@@ -225,6 +239,7 @@ offset_bottom = 321.0
 texture = SubResource("AtlasTexture_yu3br")
 
 [node name="yao8" type="TextureRect" parent="ShopSundriesbg"]
+layout_mode = 0
 offset_left = 1057.0
 offset_top = 306.0
 offset_right = 1103.0
@@ -232,6 +247,7 @@ offset_bottom = 412.0
 texture = SubResource("AtlasTexture_yu3br")
 
 [node name="yao9" type="TextureRect" parent="ShopSundriesbg"]
+layout_mode = 0
 offset_left = 446.0
 offset_top = 426.0
 offset_right = 492.0
@@ -239,8 +255,74 @@ offset_bottom = 532.0
 texture = SubResource("AtlasTexture_yu3br")
 
 [node name="yao10" type="TextureRect" parent="ShopSundriesbg"]
+layout_mode = 0
 offset_left = 291.0
 offset_top = 431.0
 offset_right = 337.0
 offset_bottom = 537.0
 texture = SubResource("AtlasTexture_yu3br")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -157.0
+offset_top = -10.0
+offset_bottom = 160.0
+grow_horizontal = 0
+texture_normal = ExtResource("8_6hqm8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -990.0
+offset_top = -187.0
+offset_right = 990.0
+offset_bottom = 323.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_swrlp")
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_swrlp")
+
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_swrlp")
+
+[node name="TextureRect4" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_swrlp")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_swrlp")
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_swrlp")
+
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_swrlp")
+
+[node name="TextureRect4" type="TextureRect" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_swrlp")
