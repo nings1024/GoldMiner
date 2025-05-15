@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://drr52urp5xipc"]
+
+[ext_resource type="Script" uid="uid://drwvwa2brwpu2" path="res://GrabbableItems/Base/GrabbableItem.gd" id="1_5vjar"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5vjar"]
+
+[node name="GrabbableItem" type="Area2D"]
+script = ExtResource("1_5vjar")
+metadata/_custom_type_script = "uid://drwvwa2brwpu2"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5vjar")

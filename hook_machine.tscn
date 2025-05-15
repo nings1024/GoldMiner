@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://b2ndke65joy1n"]
+
+[ext_resource type="Script" uid="uid://d3jlvf01okqsj" path="res://hook_machine.gd" id="1_esl15"]
+[ext_resource type="PackedScene" uid="uid://bnne65u2lsn5j" path="res://hook_head.tscn" id="1_jf0s7"]
+[ext_resource type="Texture2D" uid="uid://bxhdgomjsr08t" path="res://images/ropetile.png" id="1_oig3q"]
+[ext_resource type="Script" uid="uid://cyjj3nyqr8e3y" path="res://addons/state_machine_nodes/state_machine.gd" id="4_esl15"]
+[ext_resource type="Script" uid="uid://cuatw0sji2huu" path="res://idle.gd" id="5_esl15"]
+[ext_resource type="Script" uid="uid://ce8pfqlk88orv" path="res://shoot.gd" id="6_tsp3r"]
+[ext_resource type="Script" uid="uid://i3j6rqjigjsi" path="res://retract.gd" id="7_tsp3r"]
+
+[node name="HookMachine" type="Node2D"]
+script = ExtResource("1_esl15")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 0, 50)
+texture = ExtResource("1_oig3q")
+texture_mode = 1
+
+[node name="HookHead" parent="." instance=ExtResource("1_jf0s7")]
+position = Vector2(0, 50)
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("4_esl15")
+initial_state = NodePath("Idle")
+metadata/_custom_type_script = "uid://cyjj3nyqr8e3y"
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("5_esl15")
+metadata/_custom_type_script = "uid://dsnjlxvj4s1uu"
+
+[node name="Shoot" type="Node" parent="StateMachine"]
+script = ExtResource("6_tsp3r")
+metadata/_custom_type_script = "uid://dsnjlxvj4s1uu"
+
+[node name="Retract" type="Node" parent="StateMachine"]
+script = ExtResource("7_tsp3r")
+metadata/_custom_type_script = "uid://dsnjlxvj4s1uu"
+
+[connection signal="area_entered" from="HookHead" to="." method="_on_hook_head_area_entered"]

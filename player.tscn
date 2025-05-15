@@ -1,15 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://cwieu8mgssmel"]
+[gd_scene load_steps=16 format=3 uid="uid://cwieu8mgssmel"]
 
-[ext_resource type="Texture2D" uid="uid://c811fp435nwhk" path="res://images/miner_miner_bodym-sheet0.png" id="1_1jxqw"]
-[ext_resource type="Texture2D" uid="uid://dqx6yq0yre32h" path="res://images/miner_miner_roll-sheet0.png" id="1_i3pqv"]
-[ext_resource type="Texture2D" uid="uid://bp6n1vpxuxuai" path="res://images/miner_miner_handle-sheet0.png" id="2_hqtel"]
-[ext_resource type="Texture2D" uid="uid://c86n22eppwyl0" path="res://images/miner_miner_hand-sheet0.png" id="3_sweqy"]
-[ext_resource type="Texture2D" uid="uid://cvnejx3s37sk4" path="res://images/miner_miner_h1-sheet0.png" id="5_dw050"]
-[ext_resource type="Texture2D" uid="uid://q1mit0gq84qu" path="res://images/miner_miner_arm-sheet0.png" id="6_b26j0"]
-[ext_resource type="Texture2D" uid="uid://kh2e1vjomdgf" path="res://images/miner_miner_h1-sheet1.png" id="7_1jxqw"]
-[ext_resource type="Texture2D" uid="uid://diymqt744qxfd" path="res://images/miner_miner_armup-sheet0.png" id="7_n7ghd"]
-[ext_resource type="PackedScene" uid="uid://x4tnp1hn3ll4" path="res://rope.tscn" id="9_n7ghd"]
-[ext_resource type="Texture2D" uid="uid://do7p4yx6ifex1" path="res://images/ropehide-sheet0.png" id="10_ivps1"]
+[ext_resource type="Texture2D" uid="uid://i0t20e35adol" path="res://images/miner_miner_bodym-sheet0.png" id="1_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://dkgbu14dn7o25" path="res://images/miner_miner_roll-sheet0.png" id="1_i3pqv"]
+[ext_resource type="Script" uid="uid://b41biv3ip3j0q" path="res://player.gd" id="1_nvl01"]
+[ext_resource type="Texture2D" uid="uid://tkl6imy2j4ud" path="res://images/miner_miner_handle-sheet0.png" id="2_hqtel"]
+[ext_resource type="Texture2D" uid="uid://2bwnncitbvs1" path="res://images/miner_miner_hand-sheet0.png" id="3_sweqy"]
+[ext_resource type="Texture2D" uid="uid://ct0stjteih2gu" path="res://images/miner_miner_h1-sheet0.png" id="5_dw050"]
+[ext_resource type="Texture2D" uid="uid://csrhey5xvic1i" path="res://images/miner_miner_arm-sheet0.png" id="6_b26j0"]
+[ext_resource type="Texture2D" uid="uid://cl8uh8shpsuqm" path="res://images/miner_miner_h1-sheet1.png" id="7_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://dq081hdje0t6u" path="res://images/miner_miner_armup-sheet0.png" id="7_n7ghd"]
+[ext_resource type="Texture2D" uid="uid://byys7cbto7n4q" path="res://images/ropehide-sheet0.png" id="10_ivps1"]
+[ext_resource type="PackedScene" uid="uid://b2ndke65joy1n" path="res://hook_machine.tscn" id="10_n7ghd"]
 
 [sub_resource type="Animation" id="Animation_dw050"]
 resource_name = "Eission"
@@ -247,6 +248,7 @@ _data = {
 }
 
 [node name="Player" type="Node2D"]
+script = ExtResource("1_nvl01")
 
 [node name="Body" type="Node2D" parent="."]
 
@@ -299,11 +301,9 @@ visible = false
 position = Vector2(4, 11)
 texture = ExtResource("6_b26j0")
 
-[node name="rope" type="Node2D" parent="."]
+[node name="HookMachine" parent="." instance=ExtResource("10_n7ghd")]
+position = Vector2(-39, 23)
 
-[node name="rope" parent="rope" instance=ExtResource("9_n7ghd")]
+[node name="Ropehide-sheet0" type="Sprite2D" parent="."]
 position = Vector2(-38, 25)
-
-[node name="Ropehide-sheet0" type="Sprite2D" parent="rope"]
-position = Vector2(-38, 24)
 texture = ExtResource("10_ivps1")

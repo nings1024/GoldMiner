@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdh0tajtv7j3e"]
+
+[ext_resource type="Script" uid="uid://7drgt136ulm" path="res://UIControl/number_show.gd" id="1_d5kbl"]
+[ext_resource type="Texture2D" uid="uid://dokg8aqdcblc2" path="res://images/gamepatch.png" id="1_mxdeo"]
+[ext_resource type="Texture2D" uid="uid://dvmt5anct2hn1" path="res://images/topfont.png" id="2_d5kbl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5kbl"]
+atlas = ExtResource("2_d5kbl")
+region = Rect2(31, 106, 25, 35)
+
+[node name="NumberShow" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d5kbl")
+num = 50
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+offset_right = 230.0
+offset_bottom = 74.0
+texture = ExtResource("1_mxdeo")
+patch_margin_left = 13
+patch_margin_top = 13
+patch_margin_right = 13
+patch_margin_bottom = 13
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -560.5
+offset_top = -307.0
+offset_right = -361.5
+offset_bottom = -267.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_d5kbl")

@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnne65u2lsn5j"]
+
+[ext_resource type="Script" uid="uid://bjjwyg7spftyu" path="res://hook_head.gd" id="1_hfjrw"]
+[ext_resource type="Texture2D" uid="uid://dbj3goa244gwt" path="res://images/hook-sheet1.png" id="1_m6oms"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfjrw"]
+atlas = ExtResource("1_m6oms")
+region = Rect2(142, 70, 46, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ehgn"]
+size = Vector2(46, 28)
+
+[node name="HookHead" type="Area2D"]
+script = ExtResource("1_hfjrw")
+init_texture = SubResource("AtlasTexture_hfjrw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0ehgn")
+
+[node name="Hook-Head" type="Sprite2D" parent="."]
+scale = Vector2(1, 0.99413)
+texture = SubResource("AtlasTexture_hfjrw")
+region_rect = Rect2(142, 70, 46, 28)
