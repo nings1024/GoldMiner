@@ -29,20 +29,9 @@ func shoot():
 	state_machine.enter_state(STATE_SHOOT)
 	#state_machine.set_state('Shoot')
 
-func retact():
-	state_machine.set_state(STATE_RETRACT)
+func retact(state_data: Dictionary):
+	state_machine.enter_state(STATE_RETRACT,state_data)
 	
 func swing():
 	hook_head.reset()
 	state_machine.set_state(STATE_IDLE)	
-
-
-func _on_hook_head_area_entered(area: Area2D) -> void:
-	if area.name=='Edge':
-		state_machine.set_state('Retract')
-	elif area is  GrabbableItem:
-		hook_head.set_grabbed(area.grabbed_texture) 
-		area.on_caught()
-		state_machine.set_state('Retract')
-		
-		

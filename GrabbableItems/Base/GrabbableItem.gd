@@ -24,3 +24,12 @@ func start_moving():
 
 func on_caught():
 	queue_free()
+
+func to_dict() -> Dictionary:
+	return {
+		"item_id": item_id,
+		"item_type": item_type,
+		"item_name": item_name,
+		"weight": weight,
+		"value": value,
+	}
