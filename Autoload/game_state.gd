@@ -13,7 +13,7 @@ var goal_gold: int = 100:
 		goal_gold = value
 		emit_signal("goal_changed", value)
 
-var time_left: int = 3:
+var time_left: int = 30:
 	set(value):
 		time_left = value
 

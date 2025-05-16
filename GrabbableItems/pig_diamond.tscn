@@ -49,6 +49,7 @@ animations = [{
 }]
 
 [node name="GrabbableItem" instance=ExtResource("1_xk18c")]
+movable = true
 grabbed_texture = SubResource("AtlasTexture_cib8a")
 
 [node name="Sprite2D" parent="." index="0"]
