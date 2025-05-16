@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxpr2ha5qmhfa"]
+
+[ext_resource type="PackedScene" uid="uid://drr52urp5xipc" path="res://GrabbableItems/Base/grabbable_item.tscn" id="1_ycgp8"]
+[ext_resource type="Texture2D" uid="uid://vr62xjp2tma1" path="res://images/hook-sheet0.png" id="2_1ao23"]
+[ext_resource type="Texture2D" uid="uid://coxebbavbuqhc" path="res://images/g2-sheet0.png" id="2_yrrim"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6le2y"]
+atlas = ExtResource("2_1ao23")
+region = Rect2(148, 170, 56, 65)
+
+[node name="GrabbableItem" instance=ExtResource("1_ycgp8")]
+item_id = "gold_2"
+value = 200
+grabbed_texture = SubResource("AtlasTexture_6le2y")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_yrrim")

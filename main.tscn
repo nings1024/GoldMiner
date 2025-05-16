@@ -1,22 +1,27 @@
-[gd_scene load_steps=9 format=3 uid="uid://br4ly0v4fn7bl"]
+[gd_scene load_steps=11 format=3 uid="uid://br4ly0v4fn7bl"]
 
-[ext_resource type="Script" uid="uid://bf52yygmfn3f8" path="res://main.gd" id="1_1bvp3"]
+[ext_resource type="Script" uid="uid://dyh3tlnhje5hs" path="res://main.gd" id="1_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://5afh1scycdu7" path="res://game.tscn" id="1_ig7tw"]
-[ext_resource type="Texture2D" uid="uid://sd83xib7ptse" path="res://images/uisymbols-sheet0.png" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://nfkxig4a146g" path="res://images/uisymbols-sheet0.png" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://cdh0tajtv7j3e" path="res://UIControl/number_show.tscn" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://dokg8aqdcblc2" path="res://images/gamepatch.png" id="4_7mycd"]
 [ext_resource type="Script" uid="uid://cv3u5xp8gn5k7" path="res://GameTimer.gd" id="5_lquwl"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1bvp3"]
-atlas = ExtResource("2_0xm2m")
-region = Rect2(53, 52, 42, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0xm2m"]
-atlas = ExtResource("2_0xm2m")
-region = Rect2(63, 2, 53, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h2yge"]
 atlas = ExtResource("2_0xm2m")
 region = Rect2(0, 1, 65, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vw27"]
+atlas = ExtResource("2_0xm2m")
+region = Rect2(2, 51, 47, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_272bh"]
+atlas = ExtResource("2_0xm2m")
+region = Rect2(66, 2, 47, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mycd"]
+atlas = ExtResource("2_0xm2m")
+region = Rect2(53, 52, 42, 50)
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -31,52 +36,163 @@ script = ExtResource("1_1bvp3")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="CountDownShow" parent="CanvasLayer" instance=ExtResource("3_h2yge")]
-offset_left = 922.0
-offset_top = 18.0
-offset_right = 922.0
-offset_bottom = 18.0
-num = 60
-rect_size = 10
+[node name="UI_Global" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="CountDownSprite" type="TextureRect" parent="CanvasLayer"]
+[node name="CurrentGold" type="Control" parent="CanvasLayer/UI_Global"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 30.0
+offset_top = 20.0
+offset_right = 273.0
+offset_bottom = 83.0
+
+[node name="CurrentSprite" type="TextureRect" parent="CanvasLayer/UI_Global/CurrentGold"]
+layout_mode = 2
+offset_right = 65.0
+offset_bottom = 63.0
+size_flags_horizontal = 0
+texture = SubResource("AtlasTexture_h2yge")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/UI_Global/CurrentGold"]
+layout_mode = 2
+offset_left = 69.0
+offset_right = 261.0
+offset_bottom = 63.0
+size_flags_horizontal = 3
+texture = ExtResource("4_7mycd")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="NumberShow" parent="CanvasLayer/UI_Global/CurrentGold/NinePatchRect" instance=ExtResource("3_h2yge")]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_bottom = 0.5
+scale = Vector2(0.8, 0.8)
+
+[node name="CurrentLevel" type="Control" parent="CanvasLayer/UI_Global"]
+layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -287.0
-offset_top = 33.0
-offset_right = -245.0
+offset_left = -263.0
+offset_top = 20.0
+offset_right = -20.0
 offset_bottom = 83.0
 grow_horizontal = 0
-texture = SubResource("AtlasTexture_1bvp3")
 
-[node name="GoalSprite" type="TextureRect" parent="CanvasLayer"]
-offset_left = 21.0
-offset_top = 98.0
-offset_right = 82.0
-offset_bottom = 146.0
-texture = SubResource("AtlasTexture_0xm2m")
+[node name="CurrentSprite" type="TextureRect" parent="CanvasLayer/UI_Global/CurrentLevel"]
+layout_mode = 2
+offset_right = 65.0
+offset_bottom = 63.0
+size_flags_horizontal = 0
+texture = SubResource("AtlasTexture_5vw27")
 
-[node name="CurrentSprite" type="TextureRect" parent="CanvasLayer"]
-offset_left = 20.0
-offset_top = 10.0
-offset_right = 81.0
-offset_bottom = 54.0
-texture = SubResource("AtlasTexture_h2yge")
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/UI_Global/CurrentLevel"]
+layout_mode = 2
+offset_left = 69.0
+offset_right = 261.0
+offset_bottom = 63.0
+size_flags_horizontal = 3
+texture = ExtResource("4_7mycd")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
 
-[node name="CurrentGold" parent="CanvasLayer" instance=ExtResource("3_h2yge")]
-offset_left = 88.0
-offset_top = -1.0
-offset_right = 88.0
-offset_bottom = -1.0
-num = 0
+[node name="NumberShow" parent="CanvasLayer/UI_Global/CurrentLevel/NinePatchRect" instance=ExtResource("3_h2yge")]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_bottom = 0.5
+scale = Vector2(0.8, 0.8)
 
-[node name="GoalGold" parent="CanvasLayer" instance=ExtResource("3_h2yge")]
-offset_left = 91.0
-offset_top = 85.0
-offset_right = 91.0
-offset_bottom = 85.0
-num = 0
+[node name="UI_Level" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GoalGold" type="Control" parent="CanvasLayer/UI_Level"]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 30.0
+offset_top = 100.0
+offset_right = 273.0
+offset_bottom = 163.0
+
+[node name="CurrentSprite" type="TextureRect" parent="CanvasLayer/UI_Level/GoalGold"]
+layout_mode = 2
+offset_right = 65.0
+offset_bottom = 63.0
+size_flags_horizontal = 0
+texture = SubResource("AtlasTexture_272bh")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/UI_Level/GoalGold"]
+layout_mode = 2
+offset_left = 69.0
+offset_right = 261.0
+offset_bottom = 63.0
+size_flags_horizontal = 3
+texture = ExtResource("4_7mycd")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="NumberShow" parent="CanvasLayer/UI_Level/GoalGold/NinePatchRect" instance=ExtResource("3_h2yge")]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_bottom = 0.5
+scale = Vector2(0.8, 0.8)
+
+[node name="CountdownTime" type="Control" parent="CanvasLayer/UI_Level"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -263.0
+offset_top = 100.0
+offset_right = -20.0
+offset_bottom = 163.0
+grow_horizontal = 0
+
+[node name="CurrentSprite" type="TextureRect" parent="CanvasLayer/UI_Level/CountdownTime"]
+layout_mode = 2
+offset_right = 65.0
+offset_bottom = 63.0
+size_flags_horizontal = 0
+texture = SubResource("AtlasTexture_7mycd")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/UI_Level/CountdownTime"]
+layout_mode = 2
+offset_left = 69.0
+offset_right = 261.0
+offset_bottom = 63.0
+size_flags_horizontal = 3
+texture = ExtResource("4_7mycd")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="NumberShow" parent="CanvasLayer/UI_Level/CountdownTime/NinePatchRect" instance=ExtResource("3_h2yge")]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_bottom = 0.5
+scale = Vector2(0.8, 0.8)
 
 [node name="CountdownTimer" type="Node" parent="."]
 script = ExtResource("5_lquwl")

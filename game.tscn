@@ -1,13 +1,22 @@
-[gd_scene load_steps=17 format=4 uid="uid://5afh1scycdu7"]
+[gd_scene load_steps=28 format=4 uid="uid://5afh1scycdu7"]
 
-[ext_resource type="Texture2D" uid="uid://fopedn5ps7sl" path="res://images/bottomtile.png" id="1_80nbo"]
+[ext_resource type="Texture2D" uid="uid://bd1j87dej0pgv" path="res://images/bottomtile.png" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://bmdgefs7fe1sf" path="res://game.gd" id="1_eow3j"]
-[ext_resource type="Texture2D" uid="uid://bfd8mh0pw4h33" path="res://images/bgtile2.png" id="2_7jktm"]
-[ext_resource type="Texture2D" uid="uid://bv610rdkvq4k7" path="res://images/bgtile3.png" id="3_ryrav"]
-[ext_resource type="Texture2D" uid="uid://fgufv354v5h7" path="res://images/bgtile4.png" id="4_eow3j"]
-[ext_resource type="Texture2D" uid="uid://dnkwt46e421p" path="res://images/bgtile1.png" id="5_j5wjh"]
+[ext_resource type="Texture2D" uid="uid://5jr24v40dde4" path="res://images/bgtile2.png" id="2_7jktm"]
+[ext_resource type="Texture2D" uid="uid://krmcquo6603c" path="res://images/bgtile3.png" id="3_ryrav"]
+[ext_resource type="Texture2D" uid="uid://bp2fjvy35qp0l" path="res://images/bgtile4.png" id="4_eow3j"]
+[ext_resource type="Texture2D" uid="uid://sapt6s0rmyg8" path="res://images/bgtile1.png" id="5_j5wjh"]
 [ext_resource type="PackedScene" uid="uid://cwieu8mgssmel" path="res://player.tscn" id="6_ryrav"]
 [ext_resource type="PackedScene" uid="uid://k6vb0dneroym" path="res://GrabbableItems/gold_1.tscn" id="8_j5wjh"]
+[ext_resource type="PackedScene" uid="uid://c3aa4n74fkjln" path="res://GrabbableItems/tnt.tscn" id="9_e8heu"]
+[ext_resource type="PackedScene" uid="uid://cxpr2ha5qmhfa" path="res://GrabbableItems/gold_2.tscn" id="9_vef74"]
+[ext_resource type="PackedScene" uid="uid://v3kp6pomkx6p" path="res://GrabbableItems/bone.tscn" id="11_rvswv"]
+[ext_resource type="PackedScene" uid="uid://b0qm4owsf3uuq" path="res://GrabbableItems/diamond.tscn" id="12_boyg6"]
+[ext_resource type="PackedScene" uid="uid://d0t8qrsg4qbj3" path="res://GrabbableItems/gold_3.tscn" id="13_e36ub"]
+[ext_resource type="PackedScene" uid="uid://36p3ulalkf5y" path="res://GrabbableItems/gold_4.tscn" id="14_hb5m1"]
+[ext_resource type="PackedScene" uid="uid://87lobocuckha" path="res://GrabbableItems/pig_diamond.tscn" id="15_x5p1p"]
+[ext_resource type="PackedScene" uid="uid://b8vt3xsn65b06" path="res://GrabbableItems/stone_1.tscn" id="16_qhcbd"]
+[ext_resource type="PackedScene" uid="uid://bn7wb8204u0fg" path="res://GrabbableItems/stone_2.tscn" id="17_f1jbl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vef74"]
 texture = ExtResource("2_7jktm")
@@ -38,6 +47,22 @@ size = Vector2(20, 648)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vef74"]
 size = Vector2(1152, 20)
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_vef74"]
+scenes/1/scene = ExtResource("8_j5wjh")
+scenes/2/scene = ExtResource("9_vef74")
+scenes/3/scene = ExtResource("11_rvswv")
+scenes/4/scene = ExtResource("12_boyg6")
+scenes/5/scene = ExtResource("13_e36ub")
+scenes/6/scene = ExtResource("14_hb5m1")
+scenes/7/scene = ExtResource("15_x5p1p")
+scenes/8/scene = ExtResource("16_qhcbd")
+scenes/9/scene = ExtResource("17_f1jbl")
+scenes/10/scene = ExtResource("9_e8heu")
+
+[sub_resource type="TileSet" id="TileSet_hve3p"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetScenesCollectionSource_vef74")
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_eow3j")
@@ -110,5 +135,6 @@ shape = SubResource("RectangleShape2D_j5wjh")
 position = Vector2(576, 658)
 shape = SubResource("RectangleShape2D_vef74")
 
-[node name="Gold1" parent="." instance=ExtResource("8_j5wjh")]
-position = Vector2(355, 451)
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAjAAkAAAAAAAAAAgAjAAoAAAAAAAAAAgAjAAsAAAAAAAAAAgAjAAwAAAAAAAAAAgAjAA0AAAAAAAAAAgAiAA4AAAAAAAAAAgAiAA8AAAAAAAAAAgAiABAAAAAAAAAAAgAiABEAAAAAAAAAAgAYAA4AAAAAAAAAAQAXAA4AAAAAAAAAAQAWAA4AAAAAAAAAAQAVAA4AAAAAAAAAAQAUAA4AAAAAAAAAAQATAA4AAAAAAAAAAQASAA8AAAAAAAAAAQARAA8AAAAAAAAAAQAQAA8AAAAAAAAAAQAPAA8AAAAAAAAAAQAOAA8AAAAAAAAAAQANAA8AAAAAAAAAAQAMAA8AAAAAAAAAAQALAA8AAAAAAAAAAQAKAA8AAAAAAAAAAQAJAA8AAAAAAAAAAQAIABAAAAAAAAAAAQAHABAAAAAAAAAAAQAGABAAAAAAAAAAAQAGAAsAAAAAAAAABwAYAAsAAAAAAAAABwAcAA8AAAAAAAAACgAEAA0AAAAAAAAACQAPAAoAAAAAAAAABgADAAgAAAAAAAAABAACAAgAAAAAAAAABAACAAkAAAAAAAAABAACAAoAAAAAAAAABAACAAsAAAAAAAAABAABAAsAAAAAAAAABAABAAwAAAAAAAAABAA=")
+tile_set = SubResource("TileSet_hve3p")

@@ -1,38 +1,150 @@
-[gd_scene load_steps=16 format=3 uid="uid://3ytw5a2im1ho"]
+[gd_scene load_steps=20 format=3 uid="uid://3ytw5a2im1ho"]
 
-[ext_resource type="Texture2D" uid="uid://dii6h2ll67jt1" path="res://images/shoptoptile.png" id="1_aalhw"]
-[ext_resource type="Texture2D" uid="uid://cuvs0ppk7thu0" path="res://images/shopbg.png" id="2_hivy0"]
-[ext_resource type="Texture2D" uid="uid://b6brlt0g6y01u" path="res://images/shopbottom.png" id="3_3eflu"]
-[ext_resource type="Texture2D" uid="uid://cth3cpxfi3em6" path="res://images/shopsymbols-sheet0.png" id="3_8mu67"]
-[ext_resource type="Texture2D" uid="uid://dps70t1gy6mnr" path="res://images/shopbottles-sheet0.png" id="4_pbv0a"]
-[ext_resource type="Texture2D" uid="uid://bsvtn7wm035vd" path="res://images/shopraf-sheet0.png" id="5_8mu67"]
-[ext_resource type="Texture2D" uid="uid://c6olyx0ap48qp" path="res://images/shoppatch.png" id="5_pbv0a"]
-[ext_resource type="Texture2D" uid="uid://bay5vxd26vtau" path="res://images/shopnext-sheet0.png" id="8_6hqm8"]
-[ext_resource type="Texture2D" uid="uid://bhcuhn122tgls" path="res://images/shopitembg-sheet0.png" id="9_xxwpu"]
+[ext_resource type="Script" uid="uid://jtrgn1u8tpo" path="res://UIControl/shop.gd" id="1_kdkfn"]
+[ext_resource type="Texture2D" uid="uid://dsl2jchllpiut" path="res://images/shopbg.png" id="1_vysmh"]
+[ext_resource type="Texture2D" uid="uid://c1of5vd053yr6" path="res://images/shoptoptile.png" id="2_kdkfn"]
+[ext_resource type="Texture2D" uid="uid://u0xhlah6du3k" path="res://images/shopsymbols-sheet0.png" id="3_voxmq"]
+[ext_resource type="Texture2D" uid="uid://8yja12nbca2p" path="res://images/shoppatch.png" id="4_67ewl"]
+[ext_resource type="Texture2D" uid="uid://dh00kx8cimx1l" path="res://images/shopbottom.png" id="5_cw62q"]
+[ext_resource type="Texture2D" uid="uid://bkjqgbd48ubmd" path="res://images/shopraf-sheet0.png" id="6_6bf1e"]
+[ext_resource type="PackedScene" uid="uid://cdh0tajtv7j3e" path="res://UIControl/number_show.tscn" id="6_voxmq"]
+[ext_resource type="Texture2D" uid="uid://defw3q8tniyto" path="res://images/shopbottles-sheet0.png" id="7_axuxc"]
+[ext_resource type="Texture2D" uid="uid://dqd02fxcpf6kx" path="res://images/shopnext-sheet0.png" id="8_ctr8t"]
+[ext_resource type="Texture2D" uid="uid://bbymuwjfy1odl" path="res://images/shopitembg-sheet0.png" id="9_beucu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6hqm8"]
-atlas = ExtResource("3_8mu67")
+atlas = ExtResource("3_voxmq")
 region = Rect2(2, 51, 47, 45)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xxwpu"]
-atlas = ExtResource("3_8mu67")
+atlas = ExtResource("3_voxmq")
 region = Rect2(67, 2, 46, 51)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qre6m"]
-atlas = ExtResource("3_8mu67")
+atlas = ExtResource("3_voxmq")
 region = Rect2(2, 2, 61, 45)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8mu67"]
-atlas = ExtResource("4_pbv0a")
+atlas = ExtResource("7_axuxc")
 region = Rect2(2, 25, 43, 81)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yu3br"]
-atlas = ExtResource("4_pbv0a")
+atlas = ExtResource("7_axuxc")
 region = Rect2(128, 2, 46, 106)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_swrlp"]
-atlas = ExtResource("9_xxwpu")
+atlas = ExtResource("9_beucu")
 region = Rect2(266, 2, 244, 253)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_voxmq"]
+texture = ExtResource("7_axuxc")
+16:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+20:0/0 = 0
+22:0/0 = 0
+23:0/0 = 0
+24:0/0 = 0
+28:0/0 = 0
+29:0/0 = 0
+30:0/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+20:1/0 = 0
+22:1/0 = 0
+23:1/0 = 0
+24:1/0 = 0
+26:1/0 = 0
+27:1/0 = 0
+28:1/0 = 0
+29:1/0 = 0
+30:1/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+20:2/0 = 0
+22:2/0 = 0
+23:2/0 = 0
+24:2/0 = 0
+26:2/0 = 0
+27:2/0 = 0
+28:2/0 = 0
+29:2/0 = 0
+30:2/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+19:3/0 = 0
+20:3/0 = 0
+22:3/0 = 0
+23:3/0 = 0
+24:3/0 = 0
+25:3/0 = 0
+26:3/0 = 0
+27:3/0 = 0
+28:3/0 = 0
+29:3/0 = 0
+30:3/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+20:4/0 = 0
+22:4/0 = 0
+23:4/0 = 0
+24:4/0 = 0
+26:4/0 = 0
+27:4/0 = 0
+28:4/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+24:5/0 = 0
+25:5/0 = 0
+16:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+20:6/0 = 0
+23:6/0 = 0
+24:6/0 = 0
+25:6/0 = 0
+19:7/0 = 0
+20:7/0 = 0
+23:7/0 = 0
+24:7/0 = 0
+25:7/0 = 0
+19:8/0 = 0
+20:8/0 = 0
+21:8/0 = 0
+23:8/0 = 0
+24:8/0 = 0
+25:8/0 = 0
+19:9/0 = 0
+20:9/0 = 0
+21:9/0 = 0
+23:9/0 = 0
+24:9/0 = 0
+25:9/0 = 0
+19:10/0 = 0
+20:10/0 = 0
+21:10/0 = 0
+23:10/0 = 0
+24:10/0 = 0
+25:10/0 = 0
+0:1/size_in_atlas = Vector2i(3, 6)
+0:1/0 = 0
+8:0/size_in_atlas = Vector2i(3, 7)
+8:0/0 = 0
+11:1/size_in_atlas = Vector2i(4, 6)
+11:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_67ewl"]
+sources/0 = SubResource("TileSetAtlasSource_voxmq")
 
 [node name="Shop" type="Control"]
 layout_mode = 3
@@ -41,6 +153,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_kdkfn")
 
 [node name="Shopbg" type="TextureRect" parent="."]
 layout_mode = 1
@@ -49,7 +162,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_hivy0")
+texture = ExtResource("1_vysmh")
 stretch_mode = 1
 metadata/_edit_lock_ = true
 
@@ -59,7 +172,7 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 91.0
 grow_horizontal = 2
-texture = ExtResource("1_aalhw")
+texture = ExtResource("2_kdkfn")
 stretch_mode = 1
 metadata/_edit_lock_ = true
 
@@ -85,7 +198,10 @@ offset_top = -30.0
 offset_right = 222.0
 offset_bottom = 30.0
 grow_vertical = 2
-texture = ExtResource("5_pbv0a")
+texture = ExtResource("4_67ewl")
+
+[node name="NumberShow" parent="ShopTop/TextureRect2" instance=ExtResource("6_voxmq")]
+layout_mode = 1
 
 [node name="TextureRect3" type="TextureRect" parent="ShopTop"]
 layout_mode = 1
@@ -109,7 +225,10 @@ offset_top = -30.0
 offset_right = 487.0
 offset_bottom = 30.0
 grow_vertical = 2
-texture = ExtResource("5_pbv0a")
+texture = ExtResource("4_67ewl")
+
+[node name="NumberShow" parent="ShopTop/TextureRect4" instance=ExtResource("6_voxmq")]
+layout_mode = 1
 
 [node name="TextureRect5" type="TextureRect" parent="ShopTop"]
 layout_mode = 1
@@ -133,11 +252,14 @@ offset_top = -30.0
 offset_right = 900.0
 offset_bottom = 30.0
 grow_vertical = 2
-texture = ExtResource("5_pbv0a")
+texture = ExtResource("4_67ewl")
 patch_margin_left = 20
 patch_margin_top = 20
 patch_margin_right = 20
 patch_margin_bottom = 20
+
+[node name="NumberShow" parent="ShopTop/NinePatchRect" instance=ExtResource("6_voxmq")]
+layout_mode = 1
 
 [node name="ShopBottom" type="TextureRect" parent="."]
 layout_mode = 1
@@ -148,7 +270,7 @@ anchor_bottom = 1.0
 offset_top = -91.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("3_3eflu")
+texture = ExtResource("5_cw62q")
 stretch_mode = 1
 metadata/_edit_lock_ = true
 
@@ -164,7 +286,7 @@ offset_left = -61.0
 offset_top = 310.0
 offset_right = 462.0
 offset_bottom = 350.0
-texture = ExtResource("5_8mu67")
+texture = ExtResource("6_6bf1e")
 
 [node name="raf2" type="TextureRect" parent="ShopSundriesbg"]
 layout_mode = 0
@@ -172,7 +294,7 @@ offset_left = 783.0
 offset_top = 404.0
 offset_right = 1306.0
 offset_bottom = 444.0
-texture = ExtResource("5_8mu67")
+texture = ExtResource("6_6bf1e")
 
 [node name="raf3" type="TextureRect" parent="ShopSundriesbg"]
 layout_mode = 0
@@ -180,7 +302,7 @@ offset_left = 781.0
 offset_top = 189.0
 offset_right = 1304.0
 offset_bottom = 229.0
-texture = ExtResource("5_8mu67")
+texture = ExtResource("6_6bf1e")
 
 [node name="yao" type="TextureRect" parent="ShopSundriesbg"]
 layout_mode = 0
@@ -271,7 +393,7 @@ offset_left = -157.0
 offset_top = -10.0
 offset_bottom = 160.0
 grow_horizontal = 0
-texture_normal = ExtResource("8_6hqm8")
+texture_normal = ExtResource("8_ctr8t")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -280,10 +402,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -990.0
-offset_top = -187.0
-offset_right = 990.0
-offset_bottom = 323.0
+offset_left = -494.0
+offset_top = -126.5
+offset_right = 494.0
+offset_bottom = 126.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -307,22 +429,8 @@ texture = SubResource("AtlasTexture_swrlp")
 layout_mode = 2
 texture = SubResource("AtlasTexture_swrlp")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 69, 0, 22, 0, 0, 0, 8, 0, 0, 0, 0, 0, 59, 0, 30, 0, 0, 0, 11, 0, 1, 0, 0, 0)
+tile_set = SubResource("TileSet_67ewl")
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_swrlp")
-
-[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_swrlp")
-
-[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_swrlp")
-
-[node name="TextureRect4" type="TextureRect" parent="VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_swrlp")
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

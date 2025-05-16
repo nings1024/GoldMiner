@@ -2,7 +2,6 @@ extends Node
 
 signal gold_changed(value: int)
 signal goal_changed(value: int)
-signal time_changed(value: int)
 
 var current_gold: int = 0:
 	set(value):
@@ -14,7 +13,21 @@ var goal_gold: int = 100:
 		goal_gold = value
 		emit_signal("goal_changed", value)
 
-var time_left: int = 60:
+var time_left: int = 3:
 	set(value):
 		time_left = value
-		emit_signal("time_changed", value)
+
+# 加金币
+func add_gold(amount: int):
+	current_gold += amount
+
+# 花金币（成功返回 true，失败返回 false）
+func spend_gold(amount: int) -> bool:
+	if current_gold >= amount:
+		current_gold -= amount
+		return true
+	return false
+
+# 丢失金币（可以负值保护）
+func lose_gold(amount: int):
+	current_gold = max(0, current_gold - amount)

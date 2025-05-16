@@ -11,11 +11,13 @@ class_name GrabbableItem
 @export var value: int = 100
 @export var movable: bool = false
 @export var grabbed_texture: AtlasTexture
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
 
 
 func _ready():
 	if movable:
+		
 		start_moving()
 
 func start_moving():

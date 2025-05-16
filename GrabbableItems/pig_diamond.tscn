@@ -1,0 +1,69 @@
+[gd_scene load_steps=11 format=3 uid="uid://87lobocuckha"]
+
+[ext_resource type="PackedScene" uid="uid://drr52urp5xipc" path="res://GrabbableItems/Base/grabbable_item.tscn" id="1_xk18c"]
+[ext_resource type="Texture2D" uid="uid://c3en2xq2sye4g" path="res://images/diamole-sheet0.png" id="2_4pena"]
+[ext_resource type="Texture2D" uid="uid://dbj3goa244gwt" path="res://images/hook-sheet1.png" id="2_kqywm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cib8a"]
+atlas = ExtResource("2_kqywm")
+region = Rect2(202, 2, 49, 53)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kqywm"]
+radius = 20.0
+height = 50.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_curuo"]
+atlas = ExtResource("2_4pena")
+region = Rect2(0, 0, 64, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkc52"]
+atlas = ExtResource("2_4pena")
+region = Rect2(64, 0, 64, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6psw"]
+atlas = ExtResource("2_4pena")
+region = Rect2(0, 50, 64, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vm1r0"]
+atlas = ExtResource("2_4pena")
+region = Rect2(64, 50, 64, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cib8a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_curuo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkc52")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6psw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vm1r0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="GrabbableItem" instance=ExtResource("1_xk18c")]
+grabbed_texture = SubResource("AtlasTexture_cib8a")
+
+[node name="Sprite2D" parent="." index="0"]
+visible = false
+texture = ExtResource("2_4pena")
+hframes = 2
+vframes = 2
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(4, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_kqywm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_cib8a")
+autoplay = "default"
+frame_progress = 0.211568
+metadata/_edit_lock_ = true

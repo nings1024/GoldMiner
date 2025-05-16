@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3aa4n74fkjln"]
+
+[ext_resource type="PackedScene" uid="uid://drr52urp5xipc" path="res://GrabbableItems/Base/grabbable_item.tscn" id="1_hmva3"]
+[ext_resource type="Texture2D" uid="uid://xi87mt1l4l1s" path="res://images/tnt-sheet0.png" id="2_qspf3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_flb4x"]
+radius = 34.0
+height = 108.0
+
+[node name="GrabbableItem" instance=ExtResource("1_hmva3")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_qspf3")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CapsuleShape2D_flb4x")

@@ -7,7 +7,6 @@ build/
 *.tmp
 *.converted.*
 *.translation
-*.godot
 *.godot-export-*
 
 # System files

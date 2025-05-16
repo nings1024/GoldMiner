@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://bn7wb8204u0fg"]
+
+[ext_resource type="PackedScene" uid="uid://drr52urp5xipc" path="res://GrabbableItems/Base/grabbable_item.tscn" id="1_3cvki"]
+[ext_resource type="Texture2D" uid="uid://vr62xjp2tma1" path="res://images/hook-sheet0.png" id="2_b285q"]
+[ext_resource type="Texture2D" uid="uid://cfpbema38hfm6" path="res://images/r2-sheet0.png" id="2_ugi7v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ug0fm"]
+atlas = ExtResource("2_b285q")
+region = Rect2(163, 84, 69, 82)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b285q"]
+radius = 33.0151
+
+[node name="GrabbableItem" instance=ExtResource("1_3cvki")]
+grabbed_texture = SubResource("AtlasTexture_ug0fm")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_ugi7v")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_b285q")

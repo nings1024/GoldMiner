@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://drwvwa2brwpu2" path="res://GrabbableItems/Base/GrabbableItem.gd" id="1_5vjar"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5vjar"]
+radius = 28.0
 
 [node name="GrabbableItem" type="Area2D"]
 script = ExtResource("1_5vjar")
