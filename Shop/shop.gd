@@ -22,5 +22,5 @@ func _on_gold_changed():
 
 func _on_texture_button_pressed() -> void:
 	GameState.time_left=80
-	SceneManager.switch_scene("res://main.tscn")
+	SceneManager.switch_scene(ScenePaths.MAIN_GAME)
 	

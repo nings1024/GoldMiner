@@ -24,7 +24,7 @@ func _on_time_changed(value: int) -> void:
 	count_down_show.num=value
 
 func _on_time_out() -> void:
-	SceneManager.switch_scene("res://UIControl/shop.tscn")
+	SceneManager.change_scene(ScenePaths.SHOP,{ "pattern": "scribbles", "pattern_leave": "squares" })
 
 	
 func _init_ref() -> void:

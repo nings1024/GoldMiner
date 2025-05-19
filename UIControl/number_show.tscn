@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cdh0tajtv7j3e"]
 
 [ext_resource type="Script" uid="uid://cbin20ph2673" path="res://UIControl/number_show.gd" id="1_d5kbl"]
-[ext_resource type="Texture2D" uid="uid://w4yr8hw1ckhn" path="res://UIControl/number_green/1.tres" id="2_mxdeo"]
+[ext_resource type="Texture2D" uid="uid://dcox6pv60c4hv" path="res://UIControl/number_blue/0.tres" id="2_mxdeo"]
 
 [node name="NumberShow" type="Control"]
 layout_mode = 3
@@ -31,7 +31,14 @@ offset_top = -24.5
 offset_right = 219.0
 offset_bottom = 24.5
 grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect2" type="TextureRect" parent="Control/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("2_mxdeo")
 
 [node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 0
 texture = ExtResource("2_mxdeo")

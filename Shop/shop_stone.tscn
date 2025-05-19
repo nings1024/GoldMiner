@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cv0sxqfx6q2wj"]
+
+[ext_resource type="PackedScene" uid="uid://cvq6hoqwr2u63" path="res://Shop/PurchasableItem.tscn" id="1_43mxd"]
+[ext_resource type="Texture2D" uid="uid://dxnsvrnn4revj" path="res://images/shopitems-sheet0.png" id="2_2e18o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kp4yr"]
+atlas = ExtResource("2_2e18o")
+region = Rect2(292, -3, 146, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hq42y"]
+atlas = ExtResource("2_2e18o")
+region = Rect2(2, 122, 148, 114)
+
+[node name="ShopStone" instance=ExtResource("1_43mxd")]
+
+[node name="SelledShow" parent="." index="0"]
+visible = true
+texture = SubResource("AtlasTexture_kp4yr")
+
+[node name="DefaultShow" parent="." index="2"]
+texture = SubResource("AtlasTexture_hq42y")

@@ -15,7 +15,7 @@ extends Control
 	get():
 		return rect_size
 		
-@export_enum('white','green') var num_color:String='white'
+@export_enum('white','green','blue') var num_color:String='white'
 
 @onready var h_box_container: HBoxContainer = $Control/HBoxContainer
 var num_display:Dictionary={}
@@ -24,7 +24,7 @@ var num_display:Dictionary={}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var colors=['white','green']
+	var colors=['white','green','blue']
 	for color in colors:
 		var nums=[]
 		for i in range(10):

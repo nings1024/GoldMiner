@@ -26,8 +26,8 @@ func _process(delta: float) -> void:
 	pass
 
 func shoot():
-	state_machine.enter_state(STATE_SHOOT)
-	#state_machine.set_state('Shoot')
+	if state_machine.get_state()==STATE_IDLE:
+		state_machine.enter_state(STATE_SHOOT)
 
 func retact(state_data: Dictionary):
 	state_machine.enter_state(STATE_RETRACT,state_data)

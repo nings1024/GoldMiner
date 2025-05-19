@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://c1s0py7p6jx22"]
+
+[ext_resource type="Texture2D" uid="uid://dxbfac1revt6s" path="res://images/pricefont.png" id="1_24428"]
+
+[resource]
+atlas = ExtResource("1_24428")
+region = Rect2(33, 5, 22, 37)

@@ -1,6 +1,6 @@
-[gd_scene load_steps=20 format=3 uid="uid://3ytw5a2im1ho"]
+[gd_scene load_steps=23 format=3 uid="uid://3ytw5a2im1ho"]
 
-[ext_resource type="Script" uid="uid://jtrgn1u8tpo" path="res://UIControl/shop.gd" id="1_kdkfn"]
+[ext_resource type="Script" uid="uid://jtrgn1u8tpo" path="res://Shop/shop.gd" id="1_kdkfn"]
 [ext_resource type="Texture2D" uid="uid://dsl2jchllpiut" path="res://images/shopbg.png" id="1_vysmh"]
 [ext_resource type="Texture2D" uid="uid://c1of5vd053yr6" path="res://images/shoptoptile.png" id="2_kdkfn"]
 [ext_resource type="Texture2D" uid="uid://u0xhlah6du3k" path="res://images/shopsymbols-sheet0.png" id="3_voxmq"]
@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://defw3q8tniyto" path="res://images/shopbottles-sheet0.png" id="7_axuxc"]
 [ext_resource type="Texture2D" uid="uid://dqd02fxcpf6kx" path="res://images/shopnext-sheet0.png" id="8_ctr8t"]
 [ext_resource type="Texture2D" uid="uid://bbymuwjfy1odl" path="res://images/shopitembg-sheet0.png" id="9_beucu"]
+[ext_resource type="PackedScene" uid="uid://bj3nofse1ugjw" path="res://Shop/shop_power.tscn" id="12_jhfdn"]
+[ext_resource type="PackedScene" uid="uid://cwofn3llqn8" path="res://Shop/shop_bomb.tscn" id="13_eu4ty"]
+[ext_resource type="PackedScene" uid="uid://cv0sxqfx6q2wj" path="res://Shop/shop_stone.tscn" id="14_7nrtk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6hqm8"]
 atlas = ExtResource("3_voxmq")
@@ -417,13 +420,49 @@ size_flags_horizontal = 4
 layout_mode = 2
 texture = SubResource("AtlasTexture_swrlp")
 
+[node name="ShopPower" parent="VBoxContainer/HBoxContainer/TextureRect" instance=ExtResource("12_jhfdn")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.0
+offset_top = -126.5
+offset_right = 122.0
+offset_bottom = 126.5
+
 [node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 texture = SubResource("AtlasTexture_swrlp")
 
+[node name="ShopBomb" parent="VBoxContainer/HBoxContainer/TextureRect2" instance=ExtResource("13_eu4ty")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.0
+offset_top = -126.5
+offset_right = 122.0
+offset_bottom = 126.5
+
 [node name="TextureRect3" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 texture = SubResource("AtlasTexture_swrlp")
+
+[node name="ShopStone" parent="VBoxContainer/HBoxContainer/TextureRect3" instance=ExtResource("14_7nrtk")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.0
+offset_top = -126.5
+offset_right = 122.0
+offset_bottom = 126.5
 
 [node name="TextureRect4" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2

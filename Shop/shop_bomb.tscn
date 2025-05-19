@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwofn3llqn8"]
+
+[ext_resource type="PackedScene" uid="uid://cvq6hoqwr2u63" path="res://Shop/PurchasableItem.tscn" id="1_wfaml"]
+[ext_resource type="Texture2D" uid="uid://dxnsvrnn4revj" path="res://images/shopitems-sheet0.png" id="2_iafyl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vq8g"]
+atlas = ExtResource("2_iafyl")
+region = Rect2(154, 140, 132, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgrdl"]
+atlas = ExtResource("2_iafyl")
+region = Rect2(2, 240, 119, 130)
+
+[node name="ShopBomb" instance=ExtResource("1_wfaml")]
+
+[node name="SelledShow" parent="." index="0"]
+texture = SubResource("AtlasTexture_3vq8g")
+
+[node name="DefaultShow" parent="." index="2"]
+texture = SubResource("AtlasTexture_wgrdl")
